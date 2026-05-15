@@ -11,7 +11,8 @@ export function SiteFooter() {
             <p className="font-heading text-lg font-bold text-white">BakiMate</p>
           </div>
           <p className="mt-2 max-w-sm text-sm leading-relaxed text-slate-300">
-            Shared living, simplified. The referee—not the cop.
+            Udhaar, instalments, and supplier balances in one fast ledger—built for shop
+            counters, not spreadsheets.
           </p>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-3 text-sm sm:gap-8">
@@ -19,13 +20,13 @@ export function SiteFooter() {
             href="/whats-new"
             className="text-teal-300 underline decoration-slate-500 underline-offset-2 hover:text-teal-200 hover:decoration-teal-300"
           >
-            What’s New
+            What&apos;s New
           </Link>
           <Link
-            href="/fairness"
+            href="/#features"
             className="text-teal-300 underline decoration-slate-500 underline-offset-2 hover:text-teal-200 hover:decoration-teal-300"
           >
-            Fairness engine
+            Features
           </Link>
           <Link
             href="/privacy"
@@ -53,14 +54,14 @@ export function SiteFooter() {
           </Link>
         </div>
       </div>
-      <p className="mt-10 mx-auto max-w-2xl px-6 text-center text-[11px] leading-relaxed text-slate-300">
-        BakiMate provides tools to organize shared expenses—not legal, tax, or
-        financial advice. See{" "}
+      <p className="mx-auto mt-10 max-w-2xl px-6 text-center text-[11px] leading-relaxed text-slate-300">
+        BakiMate is software to help you track credits, payments, and payables—it is not legal, tax,
+        or accounting advice. See{" "}
         <Link
-          href="/fairness#calculations-disclaimer"
+          href="/terms#calculations-disclaimer"
           className="font-medium text-teal-300 underline decoration-teal-400/70 underline-offset-2 hover:text-teal-200"
         >
-          how we round amounts
+          how amounts and rounding work
         </Link>
         ,{" "}
         <Link

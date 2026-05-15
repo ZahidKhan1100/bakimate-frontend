@@ -3,12 +3,13 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { GlassPanel } from "@/components/ui/glass-panel";
+import { brand } from "@/lib/brand";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
   title: "Privacy & Trust",
   description:
-    "BakiMate Privacy & Trust: how we handle household data, receipt images, analytics, and your rights.",
+    "BakiMate Privacy & Trust: shop and account data, receipt capture, analytics, subscriptions, and your rights.",
   path: "/privacy",
   keywords: ["privacy policy", "data protection", "receipt scanning privacy"],
 });
@@ -34,10 +35,10 @@ export default function PrivacyPage() {
               </p>
               <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                 <p>
-                  BakiMate processes account and household data to provide expense
-                  splitting, settlements, and in-app features. We use service
-                  providers under appropriate agreements and retain data only
-                  as needed to operate the service and meet legal obligations.
+                  BakiMate processes account data, ledger entries you create, and optional receipt
+                  images to provide the app and in-app features. We use service providers under
+                  appropriate agreements and retain data only as needed to operate the service and
+                  meet legal obligations.
                 </p>
                 <p>
                   You may request access or deletion of personal data where
@@ -65,23 +66,22 @@ export default function PrivacyPage() {
                   <strong className="text-slate-900 dark:text-white">
                     Calculations and disputes.
                   </strong>{" "}
-                  BakiMate provides software tools to help roommates organize
-                  expenses and suggested settlement amounts. We do not provide
-                  legal, tax, accounting, or financial advice. Amounts and
-                  splits are produced according to the rules described in the
-                  product (including whole-cent rounding as explained on our{" "}
+                  BakiMate provides tools to help you track customer credits, payments, and supplier
+                  balances. We do not provide legal, tax, accounting, or financial advice. Amounts
+                  and balances follow the rules described in the app (including how rounding and
+                  instalments work, as summarized on our{" "}
                   <Link
-                    href="/fairness#calculations-disclaimer"
-                    className="font-semibold text-[#FF6A6A] underline-offset-2 hover:underline"
+                    href="/terms#calculations-disclaimer"
+                    className="font-semibold underline-offset-2 hover:underline"
+                    style={{ color: brand.primary }}
                   >
-                    Fairness
-                  </Link>{" "}
-                  page). You are responsible for verifying amounts that matter
-                  to you and for resolving disagreements between household
-                  members. To the fullest extent permitted by law, BakiMate and
-                  its operators are not liable for losses arising from reliance
-                  on in-app calculations, rounding, or household disputes; your
-                  formal Terms of Service should govern when published.
+                    Terms — calculations &amp; rounding
+                  </Link>
+                  ). You are responsible for verifying figures that matter to your business and for
+                  resolving disagreements with customers or suppliers. To the fullest extent
+                  permitted by law, BakiMate and its operators are not liable for losses arising from
+                  reliance on in-app totals or rounding; your formal Terms of Service should govern
+                  when published.
                 </p>
               </div>
             </GlassPanel>
@@ -92,22 +92,20 @@ export default function PrivacyPage() {
               </p>
               <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-700 dark:text-slate-200">
                 <p>
-                  <strong className="text-[#FF6A6A]">Receipt photos.</strong>{" "}
-                  When you scan a receipt, we send the image to our AI provider
-                  to extract amounts and text. We design for minimal retention:
-                  treat images as sensitive, avoid storing raw images longer than
-                  needed for processing, and keep derived data encrypted at
-                  rest where applicable.
+                  <strong style={{ color: brand.primary }}>Receipt capture.</strong> When you scan a
+                  receipt, we may send the image to our AI provider to extract amounts and text. We
+                  design for minimal retention: treat images as sensitive, avoid storing raw images
+                  longer than needed for processing, and keep derived data protected at rest where
+                  applicable.
                 </p>
                 <p>
-                  <strong className="text-[#FF6A6A]">No cop mode.</strong> We
-                  help you settle fairly—we don&apos;t sell your drama to
-                  advertisers. Analytics we use are privacy-friendly where
-                  possible (e.g. Plausible) and configurable.
+                  <strong style={{ color: brand.primary }}>Your counter, your data.</strong> We
+                  don&apos;t sell your customer list. Analytics we use aim to be privacy-friendly
+                  where possible and configurable.
                 </p>
                 <p>
-                  <strong className="text-[#FF6A6A]">Questions?</strong> Contact
-                  us via the support form—we&apos;ll answer in plain language.
+                  <strong style={{ color: brand.primary }}>Questions?</strong> Reach us through the
+                  contact form—we&apos;ll answer in plain language.
                 </p>
               </div>
             </GlassPanel>

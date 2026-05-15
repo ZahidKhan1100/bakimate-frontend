@@ -1,17 +1,10 @@
 import Link from "next/link";
-import { cn } from "@/lib/utils";
+import { SITE_NAV } from "@/config/site-nav";
 import { MobileNav } from "@/components/site/MobileNav";
 import { SiteLogo } from "@/components/site/SiteLogo";
 import { ThemeToggle } from "@/components/site/ThemeToggle";
-
-const nav = [
-  { href: "/", label: "Home" },
-  { href: "/whats-new", label: "What’s New" },
-  { href: "/fairness", label: "Fairness" },
-  { href: "/privacy", label: "Privacy" },
-  { href: "/terms", label: "Terms" },
-  { href: "/contact", label: "Contact" },
-];
+import { brand } from "@/lib/brand";
+import { cn } from "@/lib/utils";
 
 export function SiteHeader({ className }: { className?: string }) {
   return (
@@ -24,7 +17,8 @@ export function SiteHeader({ className }: { className?: string }) {
       <div className="mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 px-4 sm:h-16 sm:px-6">
         <Link
           href="/"
-          className="flex min-w-0 items-center gap-2 font-heading text-lg font-extrabold tracking-tight text-[#FF6A6A] sm:gap-2.5 sm:text-xl"
+          className="flex min-w-0 items-center gap-2 font-heading text-lg font-extrabold tracking-tight sm:gap-2.5 sm:text-xl"
+          style={{ color: brand.primary }}
         >
           <SiteLogo
             decorative
@@ -35,12 +29,12 @@ export function SiteHeader({ className }: { className?: string }) {
           <span className="truncate">BakiMate</span>
         </Link>
         <nav className="hidden items-center gap-6 underline-offset-4 md:flex lg:gap-8">
-          {nav.map((item) => (
+          {SITE_NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
               prefetch={false}
-              className="text-sm font-medium text-slate-800 underline decoration-slate-500/70 transition hover:text-[#FF6A6A] hover:decoration-[#FF6A6A] dark:text-slate-200 dark:decoration-slate-400"
+              className="text-sm font-medium text-slate-800 decoration-slate-500/70 transition hover:underline hover:decoration-[#00875A] dark:text-slate-200 dark:decoration-slate-400"
             >
               {item.label}
             </Link>
@@ -51,9 +45,10 @@ export function SiteHeader({ className }: { className?: string }) {
           <Link
             href="/contact"
             prefetch={false}
-            className="hidden rounded-full bg-[#FF6A6A] px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-[#FF6A6A]/25 transition hover:bg-[#ef5a5a] sm:inline-flex"
+            className="hidden rounded-full px-4 py-2 text-sm font-semibold text-white transition hover:opacity-95 sm:inline-flex"
+            style={{ backgroundColor: brand.primary }}
           >
-            Get support
+            Contact
           </Link>
           <MobileNav />
         </div>

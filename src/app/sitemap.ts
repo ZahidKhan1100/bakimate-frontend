@@ -7,7 +7,6 @@ const routes: {
   priority: number;
 }[] = [
     { path: "/", changeFrequency: "weekly", priority: 1 },
-    { path: "/fairness", changeFrequency: "monthly", priority: 0.9 },
     { path: "/whats-new", changeFrequency: "weekly", priority: 0.85 },
     { path: "/privacy", changeFrequency: "yearly", priority: 0.6 },
     { path: "/terms", changeFrequency: "yearly", priority: 0.6 },

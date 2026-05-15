@@ -3,16 +3,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { SITE_NAV } from "@/config/site-nav";
+import { brand } from "@/lib/brand";
 import { cn } from "@/lib/utils";
-
-const nav = [
-  { href: "/", label: "Home" },
-  { href: "/whats-new", label: "What’s New" },
-  { href: "/fairness", label: "Fairness" },
-  { href: "/privacy", label: "Privacy" },
-  { href: "/terms", label: "Terms" },
-  { href: "/contact", label: "Contact" },
-] as const;
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -61,7 +54,10 @@ export function MobileNav() {
             )}
           >
             <div className="flex items-center justify-between border-b border-white/10 py-4 pr-2">
-              <span className="font-heading text-lg font-bold text-[#FF6A6A]">
+              <span
+                className="font-heading text-lg font-bold"
+                style={{ color: brand.primary }}
+              >
                 Menu
               </span>
               <button
@@ -74,12 +70,12 @@ export function MobileNav() {
               </button>
             </div>
             <ul className="flex flex-1 flex-col gap-1 py-6">
-              {nav.map((item) => (
+              {SITE_NAV.map((item) => (
                 <li key={item.href}>
                   <Link
                     href={item.href}
                     onClick={() => setOpen(false)}
-                    className="flex min-h-12 items-center rounded-xl px-3 text-lg font-semibold text-slate-800 underline decoration-slate-400 decoration-2 underline-offset-4 active:bg-[#FF6A6A]/10 dark:text-slate-100 dark:decoration-slate-500 dark:active:bg-white/10"
+                    className="flex min-h-12 items-center rounded-xl px-3 text-lg font-semibold text-slate-800 underline decoration-slate-400 decoration-2 underline-offset-4 active:bg-[#00875A]/10 dark:text-slate-100 dark:decoration-slate-500 dark:active:bg-white/10"
                   >
                     {item.label}
                   </Link>
@@ -89,7 +85,11 @@ export function MobileNav() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="mb-4 inline-flex min-h-12 items-center justify-center rounded-2xl bg-[#FF6A6A] px-6 text-center font-bold text-white shadow-lg shadow-[#FF6A6A]/25"
+              className="mb-4 inline-flex min-h-12 items-center justify-center rounded-2xl px-6 text-center font-bold text-white shadow-lg"
+              style={{
+                backgroundColor: brand.primary,
+                boxShadow: "0 25px 50px -12px rgba(0, 135, 90, 0.35)",
+              }}
             >
               Get support
             </Link>

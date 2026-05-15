@@ -6,24 +6,24 @@ import { GlassPanel } from "@/components/ui/glass-panel";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
-  title: "What’s New",
+  title: "What's New",
   description:
-    "Latest BakiMate updates: offline expenses, push notifications, House Wall, and fair split improvements.",
+    "Latest BakiMate updates: ledger, udhaar, suppliers, receipts, and Pro features for shopkeepers.",
   path: "/whats-new",
 });
 
 const items = [
   {
-    title: "Add expenses even without internet",
-    body: "No signal? No problem. Create bills offline and BakiMate will sync them automatically when you’re back online.",
+    title: "Works at the counter",
+    body: "Record gave / got, supplier dues, and instalments in seconds—your phone stays the source of truth.",
   },
   {
-    title: "Notifications",
-    body: "Get alerts for important house activity so you don’t miss updates (settlements, wall activity, and more).",
+    title: "Receipt hints",
+    body: "When your backend is configured for AI, scanning can suggest amounts so entries land in the right place.",
   },
   {
-    title: "House Wall",
-    body: "A shared feed for your house: post updates and photos, run quick polls, and react in real time.",
+    title: "Customer balance link",
+    body: "Share a read-only page so buyers can see what they owe without installing the app.",
   },
 ];
 
@@ -41,7 +41,7 @@ export default function WhatsNewPage() {
               What’s new in BakiMate
             </h1>
             <p className="mt-3 text-sm text-slate-600 dark:text-slate-300 sm:text-base">
-              A quick roundup of the newest features your house can use right now.
+              Highlights from recent releases—see the app for the full changelog.
             </p>
           </div>
 
@@ -70,7 +70,7 @@ export default function WhatsNewPage() {
               </div>
               <Link
                 href="/contact"
-                className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#FF6A6A] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#FF6A6A]/25 hover:bg-[#ef5a5a]"
+                className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#00875A] px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-[#00875A]/25 hover:bg-[#006d4d]"
               >
                 Contact support
               </Link>

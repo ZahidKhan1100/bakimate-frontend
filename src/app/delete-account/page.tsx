@@ -66,20 +66,19 @@ export default function DeleteAccountPage() {
               </p>
               <div className="mt-4 space-y-4 text-sm leading-relaxed text-slate-700 dark:text-slate-200">
                 <p>
-                  <strong className="text-[#FF6A6A]">Generally deleted.</strong> After you
+                  <strong className="text-[#00875A]">Generally deleted.</strong> After you
                   delete your account, we remove or anonymize personal data tied to your user
                   profile and access credentials so you cannot sign in again.
                 </p>
                 <p>
-                  <strong className="text-[#FF6A6A]">Household content.</strong> Content you
-                  contributed to a household (for example expenses or wall posts) may be
-                  retained in aggregate or attributed to the household where needed so other
-                  members&apos; records stay consistent, or may be removed depending on how the
-                  household is configured. If something must remain for legitimate interests of
-                  other members, we minimize what is kept.
+                  <strong className="text-[#00875A]">Shop &amp; ledger data.</strong> Entries and
+                  records tied to your shop may be
+                  retained as needed for other authorised users or legal obligations, or removed
+                  depending on your shop configuration. We minimize what stays when deletion is
+                  requested.
                 </p>
                 <p>
-                  <strong className="text-[#FF6A6A]">Backups &amp; legal.</strong> Residual
+                  <strong className="text-[#00875A]">Backups &amp; legal.</strong> Residual
                   copies may persist for a limited time in encrypted backups and are overwritten
                   on a rolling schedule. We may retain certain records where the law requires
                   (for example fraud prevention or tax), only as long as necessary.

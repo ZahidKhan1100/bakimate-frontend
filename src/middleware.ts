@@ -5,7 +5,6 @@ import { SITE_URL } from "@/config/urls";
 const CACHE_HTML_PATHS = new Set([
   "/",
   "/contact",
-  "/fairness",
   "/join",
   "/privacy",
   "/terms",

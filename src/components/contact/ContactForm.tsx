@@ -151,7 +151,7 @@ export function ContactForm() {
           disabled={status === "loading"}
           aria-busy={status === "loading"}
           className={cn(
-            "w-full rounded-2xl bg-[#FF6A6A] py-4 font-bold text-white transition hover:bg-[#ef5a5a]",
+            "w-full rounded-2xl bg-[#00875A] py-4 font-bold text-white transition hover:bg-[#006d4d]",
             status === "loading" && "opacity-50",
           )}
         >
