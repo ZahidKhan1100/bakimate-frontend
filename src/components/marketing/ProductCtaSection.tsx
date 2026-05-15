@@ -51,10 +51,10 @@ export function ProductCtaSection() {
                 App Store / Play
               </a>
               <Link
-                href="/join"
+                href="/contact"
                 className="inline-flex min-h-[48px] flex-1 items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3 text-center text-sm font-bold text-slate-900 hover:bg-slate-50 dark:border-white/15 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
               >
-                Have an invite code?
+                Contact
               </Link>
             </div>
             <p className="mt-4 text-xs text-slate-500 dark:text-slate-400">

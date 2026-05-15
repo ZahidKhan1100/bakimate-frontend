@@ -51,10 +51,10 @@ export function HeroSection() {
               Get the app
             </a>
             <Link
-              href="/join"
+              href="#get-started"
               className="inline-flex min-h-[48px] items-center justify-center rounded-2xl border border-white/10 bg-white/10 px-8 py-3.5 text-center font-semibold text-slate-900 backdrop-blur-[15px] transition hover:bg-white/20 dark:text-white sm:min-h-14 sm:py-0"
             >
-              Invite code
+              See features
             </Link>
           </div>
           <div className="mt-6">

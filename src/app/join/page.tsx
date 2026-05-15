@@ -6,9 +6,9 @@ import { pageMetadata } from "@/lib/seo";
 import { JoinClient } from "./JoinClient";
 
 export const metadata: Metadata = pageMetadata({
-  title: "Join a house",
+  title: "Download BakiMate",
   description:
-    "You were invited to a house on BakiMate. Install the app, then use your house code to join your roommates.",
+    "Install BakiMate on iOS or Android and sign in to run your shop ledger—udhaar, payments, and insights in one place.",
   path: "/join",
 });
 
@@ -25,11 +25,11 @@ export default function JoinPage() {
       <main className="flex-1 px-4 py-12 sm:px-6 sm:py-16">
         <div className="mx-auto max-w-xl">
           <h1 className="font-heading text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
-            You&apos;re invited
+            Get BakiMate
           </h1>
           <p className="mt-3 text-slate-600 dark:text-slate-300">
-            A roommate shared a BakiMate house invite with you. Use the code below after you
-            install the app.
+            The ledger runs in the mobile app. Install on your device, sign in, and you&apos;re
+            set—no codes to type on this page.
           </p>
           <div className="mt-10">
             <Suspense fallback={<JoinFallback />}>
