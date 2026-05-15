@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 
-/** Logo file in `public/` — swap filename if you add e.g. `logo.svg`. */
-export const SITE_LOGO_PATH = "/icon.png";
+/** Logo file in `public/` (see `logo.svg`). */
+export const SITE_LOGO_PATH = "/logo.svg";
 
 type SiteLogoProps = {
   className?: string;
