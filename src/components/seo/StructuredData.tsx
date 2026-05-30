@@ -1,4 +1,4 @@
-import { SITE_URL } from "@/config/urls";
+import { APP_STORE_URL, SITE_URL } from "@/config/urls";
 
 const ORG_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
@@ -36,13 +36,14 @@ export function StructuredData() {
         "@type": "SoftwareApplication",
         name: "BakiMate",
         applicationCategory: "FinanceApplication",
-        operatingSystem: "iOS, Android, Web",
+        operatingSystem: "iOS, Android",
         offers: {
           "@type": "Offer",
           price: "0",
           priceCurrency: "USD",
         },
         url: SITE_URL,
+        downloadUrl: APP_STORE_URL,
       },
     ],
   };

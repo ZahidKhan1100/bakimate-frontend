@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useMemo } from "react";
 import { useSearchParams } from "next/navigation";
-import { SITE_URL } from "@/config/urls";
+import { APP_STORE_URL, SITE_URL } from "@/config/urls";
 
 /**
  * Lightweight /join page: app download + optional deep link when `?code=` is present
@@ -23,7 +23,18 @@ export function JoinClient() {
   return (
     <div className="space-y-8">
       <ol className="list-decimal space-y-3 pl-5 text-slate-600 dark:text-slate-300">
-        <li>Install BakiMate from the App Store or Google Play.</li>
+        <li>
+          Install BakiMate from the{" "}
+          <a
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-[#00875A] underline underline-offset-2 hover:text-[#006d4d] dark:text-teal-300"
+          >
+            App Store
+          </a>
+          .
+        </li>
         <li>Sign up or log in with email, Google, or Apple.</li>
         {openInAppHref ? (
           <li>
@@ -36,12 +47,14 @@ export function JoinClient() {
       </ol>
 
       <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-        <Link
-          href="/#download"
+        <a
+          href={APP_STORE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex min-h-12 items-center justify-center rounded-2xl bg-[#00875A] px-6 py-3 text-center text-sm font-semibold text-white shadow-lg shadow-[#00875A]/30 transition hover:bg-[#006d4d]"
         >
-          Get the app
-        </Link>
+          Download on the App Store
+        </a>
         {openInAppHref ? (
           <a
             href={openInAppHref}

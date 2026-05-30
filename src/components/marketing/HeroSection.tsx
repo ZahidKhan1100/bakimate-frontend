@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { HeroAppPreview } from "@/components/marketing/HeroAppPreview";
+import { APP_STORE_URL } from "@/config/urls";
 import { brand } from "@/lib/brand";
 import { Wallet } from "lucide-react";
 
@@ -39,14 +40,16 @@ export function HeroSection() {
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:items-center sm:gap-4">
             <a
-              href="#download"
-              className="inline-flex min-h-[48px] items-center justify-center rounded-2xl px-8 py-3.5 text-center font-semibold text-white shadow-xl transition sm:min-h-14 sm:py-0"
+              href={APP_STORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[48px] items-center justify-center rounded-2xl px-8 py-3.5 text-center font-semibold text-white shadow-xl transition hover:opacity-95 sm:min-h-14 sm:py-0"
               style={{
                 backgroundColor: brand.primary,
                 boxShadow: `0 20px 40px -12px ${brand.primary}55`,
               }}
             >
-              Get the app
+              Get on the App Store
             </a>
             <Link
               href="#get-started"

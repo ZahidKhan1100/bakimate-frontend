@@ -4,6 +4,7 @@ import { FeatureGrid } from "@/components/marketing/FeatureGrid";
 import { HeroSection } from "@/components/marketing/HeroSection";
 import { HowItWorksSection } from "@/components/marketing/HowItWorksSection";
 import { ProductCtaSection } from "@/components/marketing/ProductCtaSection";
+import { StoreDownloadButtons } from "@/components/marketing/StoreDownloadButtons";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { GlassPanel } from "@/components/ui/glass-panel";
@@ -129,24 +130,10 @@ export default function Home() {
               Download BakiMate
             </h2>
             <p className="mt-3 text-sm text-slate-700 dark:text-slate-300 sm:text-base">
-              Replace the links below with your App Store and Play Store URLs when the listings are
-              public. Until then, use TestFlight / internal tracks for testers.
+              BakiMate is live on the App Store for iPhone and iPad. Android on Google Play is
+              coming soon.
             </p>
-            <div className="mt-8 flex w-full max-w-md flex-col items-stretch justify-center gap-3 sm:mx-auto sm:mt-10 sm:max-w-none sm:flex-row sm:items-center sm:gap-4">
-              <a
-                href="#"
-                className="inline-flex min-h-[48px] w-full items-center justify-center rounded-2xl px-8 py-3.5 font-semibold text-white sm:min-h-14 sm:w-auto sm:min-w-[200px] sm:py-0"
-                style={{ backgroundColor: brand.primary }}
-              >
-                App Store
-              </a>
-              <a
-                href="#"
-                className="inline-flex min-h-[48px] w-full items-center justify-center rounded-2xl border border-slate-300 bg-white py-3.5 font-semibold text-slate-900 hover:bg-slate-50 dark:border-white/15 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800 sm:min-h-14 sm:w-auto sm:min-w-[200px] sm:py-0"
-              >
-                Google Play
-              </a>
-            </div>
+            <StoreDownloadButtons className="mt-8 sm:mt-10" />
             <GlassPanel className="mx-auto mt-10 max-w-lg p-5 sm:mt-12 sm:p-6">
               <p className="text-sm font-medium text-slate-700 dark:text-slate-300">
                 Questions about rollout, training, or regional payments?

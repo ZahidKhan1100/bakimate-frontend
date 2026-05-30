@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { StoreDownloadButtons } from "@/components/marketing/StoreDownloadButtons";
 import { GlassPanel } from "@/components/ui/glass-panel";
 import { brand } from "@/lib/brand";
 import { Smartphone } from "lucide-react";
@@ -70,21 +71,13 @@ export function ProductCtaSection() {
               <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                 Download for your platform, then sign in with email, Google, or Apple.
               </p>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href="#download"
-                  className="inline-flex min-h-[48px] flex-1 items-center justify-center rounded-2xl px-6 py-3 text-center text-sm font-bold text-white transition"
-                  style={{ backgroundColor: brand.primary }}
-                >
-                  App Store / Play
-                </a>
-                <Link
-                  href="/contact"
-                  className="inline-flex min-h-[48px] flex-1 items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3 text-center text-sm font-bold text-slate-900 hover:bg-slate-50 dark:border-white/15 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
-                >
-                  Contact
-                </Link>
-              </div>
+              <StoreDownloadButtons className="mt-6 !max-w-none" showPlayComingSoon={false} />
+              <Link
+                href="/contact"
+                className="mt-3 inline-flex min-h-[48px] w-full items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3 text-center text-sm font-bold text-slate-900 hover:bg-slate-50 dark:border-white/15 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
+              >
+                Contact
+              </Link>
               <p className="mt-4 text-xs text-slate-500 dark:text-slate-400">
                 Need something custom for your region or POS integration?{" "}
                 <Link
