@@ -11,7 +11,8 @@ const routes: {
     { path: "/privacy", changeFrequency: "yearly", priority: 0.6 },
     { path: "/terms", changeFrequency: "yearly", priority: 0.6 },
     { path: "/contact", changeFrequency: "yearly", priority: 0.7 },
-    { path: "/join", changeFrequency: "monthly", priority: 0.75 },
+    { path: "/join", changeFrequency: "monthly", priority: 0.8 },
+    { path: "/delete-account", changeFrequency: "yearly", priority: 0.5 },
   ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

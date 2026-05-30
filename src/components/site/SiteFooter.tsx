@@ -29,6 +29,18 @@ export function SiteFooter() {
             Features
           </Link>
           <Link
+            href="/#download"
+            className="text-teal-300 underline decoration-slate-500 underline-offset-2 hover:text-teal-200 hover:decoration-teal-300"
+          >
+            Download
+          </Link>
+          <Link
+            href="/#faq"
+            className="text-teal-300 underline decoration-slate-500 underline-offset-2 hover:text-teal-200 hover:decoration-teal-300"
+          >
+            FAQ
+          </Link>
+          <Link
             href="/privacy"
             className="text-teal-300 underline decoration-slate-500 underline-offset-2 hover:text-teal-200 hover:decoration-teal-300"
           >

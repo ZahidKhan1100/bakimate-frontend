@@ -4,7 +4,9 @@ import { FeatureGrid } from "@/components/marketing/FeatureGrid";
 import { HeroSection } from "@/components/marketing/HeroSection";
 import { HowItWorksSection } from "@/components/marketing/HowItWorksSection";
 import { ProductCtaSection } from "@/components/marketing/ProductCtaSection";
+import { HomeFaqSection } from "@/components/marketing/HomeFaqSection";
 import { StoreDownloadButtons } from "@/components/marketing/StoreDownloadButtons";
+import { FaqStructuredData } from "@/components/seo/FaqStructuredData";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { GlassPanel } from "@/components/ui/glass-panel";
@@ -28,8 +30,9 @@ export const metadata: Metadata = pageMetadata({
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
+      <FaqStructuredData />
       <SiteHeader />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <HeroSection />
         <HowItWorksSection />
         <FeatureGrid />
@@ -120,6 +123,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <HomeFaqSection />
 
         <section
           id="download"

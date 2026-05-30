@@ -3,6 +3,7 @@ import Link from "next/link";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { GlassPanel } from "@/components/ui/glass-panel";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -34,6 +35,13 @@ export default function WhatsNewPage() {
       <main className="flex-1 px-4 py-12 sm:px-6 sm:py-16">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-3xl">
+            <Breadcrumbs
+              className="mb-6"
+              items={[
+                { name: "Home", href: "/" },
+                { name: "What's New" },
+              ]}
+            />
             <p className="text-xs font-bold uppercase tracking-widest text-[#2EC4B6]">
               Release notes
             </p>

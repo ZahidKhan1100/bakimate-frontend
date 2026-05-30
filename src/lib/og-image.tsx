@@ -63,7 +63,7 @@ export function bakimateOgImageResponse(): ImageResponse {
             fontWeight: 600,
           }}
         >
-          Credits · payments · customer balances
+          Free on the App Store · iPhone & iPad
         </div>
       </div>
     ),

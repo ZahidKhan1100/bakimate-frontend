@@ -1,0 +1,19 @@
+Google Search Console — HTML file verification
+================================================
+
+1. In Search Console, choose "HTML file" and download the file
+   (name looks like: google1234567890abcdef.html).
+
+2. Copy that file into THIS folder (public/), unchanged:
+   bakimate-frontend/public/google1234567890abcdef.html
+
+3. Commit, deploy, then open in a browser (must return 200, not 404):
+   https://www.bakimate.com/google1234567890abcdef.html
+   (also works on https://bakimate.com/... after deploy)
+
+4. Click Verify in Search Console. Do not delete the file after verification.
+
+Alternative (no file): set NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION in Railway/Vercel
+to the meta-tag content value from Search Console, redeploy, verify with "HTML tag".
+
+Tip: Prefer adding the property https://bakimate.com (no www) — matches site canonical URL.

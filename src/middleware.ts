@@ -11,10 +11,20 @@ const CACHE_HTML_PATHS = new Set([
   "/whats-new",
 ]);
 
+/** Google Search Console HTML-file verification (e.g. `/googleabc123.html`). */
+function isGoogleSiteVerificationFile(pathname: string): boolean {
+  return /^\/google[a-z0-9]+\.html$/i.test(pathname);
+}
+
 /**
  * Lets CDNs edge-cache prerendered HTML (`s-maxage`) while browsers revalidate (`max-age=0`).
  */
 export function middleware(request: NextRequest) {
+  // Serve GSC verification files on www and apex — do not 308 to canonical host.
+  if (isGoogleSiteVerificationFile(request.nextUrl.pathname)) {
+    return NextResponse.next();
+  }
+
   // Canonicalize host + protocol so Google doesn't treat http/www as separate URLs.
   // This is especially important when using Railway + external DNS where redirects may not be automatic.
   const canonical = new URL(SITE_URL);
@@ -55,6 +65,6 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|icon.jpg|apple-icon.png|robots.txt|sitemap.xml|manifest.webmanifest).*)",
+    "/((?!_next/static|_next/image|favicon.ico|icon.jpg|apple-icon.png|robots.txt|sitemap.xml|manifest.webmanifest|google[a-z0-9]+\\.html).*)",
   ],
 };

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { ContactForm } from "@/components/contact/ContactForm";
+import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = pageMetadata({
@@ -17,6 +18,13 @@ export default function ContactPage() {
       <SiteHeader />
       <main className="flex-1 px-4 py-12 sm:px-6 sm:py-16">
         <div className="mx-auto max-w-xl">
+          <Breadcrumbs
+            className="mb-6"
+            items={[
+              { name: "Home", href: "/" },
+              { name: "Contact" },
+            ]}
+          />
           <h1 className="font-heading text-3xl font-extrabold text-slate-900 dark:text-white sm:text-4xl">
             Contact & support
           </h1>

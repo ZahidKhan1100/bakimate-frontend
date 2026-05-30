@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "BakiMate — Shared living, simplified",
+    name: "BakiMate — Shop ledger for udhaar & instalments",
     short_name: "BakiMate",
     description:
-      "Split bills fairly, scan receipts with AI, and settle up with your household.",
+      "Track customer credits, payments, instalments, and supplier payables—built for shop counters.",
     start_url: "/",
     display: "standalone",
     background_color: "#0b1220",

@@ -5,7 +5,14 @@ import { PlausibleScript } from "@/components/analytics/PlausibleScript";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
 import { StructuredData } from "@/components/seo/StructuredData";
 import { SITE_URL } from "@/config/urls";
-import { SITE_KEYWORDS } from "@/lib/seo";
+import {
+  DEFAULT_OG_IMAGE_PATH,
+  DEFAULT_SITE_DESCRIPTION,
+  DEFAULT_SITE_TITLE,
+  SITE_KEYWORDS,
+  absoluteUrl,
+} from "@/lib/seo";
+import { OG_ALT } from "@/lib/og-image";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -35,16 +42,21 @@ export const viewport: Viewport = {
 
 const googleVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION;
 
+const defaultOgImage = absoluteUrl(DEFAULT_OG_IMAGE_PATH);
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: "BakiMate",
   title: {
-    default: "BakiMate — Udhaar & installments, clear and fast",
+    default: DEFAULT_SITE_TITLE,
     template: "%s | BakiMate",
   },
-  description:
-    "Record credits (gave), payments (got), and instalments per customer—simple shop ledger for iOS, Android, and web.",
+  description: DEFAULT_SITE_DESCRIPTION,
   keywords: [...SITE_KEYWORDS],
+  icons: {
+    icon: [{ url: "/icon.jpg", type: "image/jpeg" }],
+    apple: [{ url: "/icon.jpg", type: "image/jpeg" }],
+  },
   authors: [{ name: "BakiMate", url: SITE_URL }],
   creator: "BakiMate",
   publisher: "BakiMate",
@@ -69,19 +81,26 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "BakiMate — Udhaar & installments, clear and fast",
-    description:
-      "Track what customers owe and what they paid—fast ledger for daily shop operations.",
+    title: DEFAULT_SITE_TITLE,
+    description: DEFAULT_SITE_DESCRIPTION,
     type: "website",
     locale: "en_US",
     siteName: "BakiMate",
     url: SITE_URL,
+    images: [
+      {
+        url: defaultOgImage,
+        width: 1200,
+        height: 630,
+        alt: OG_ALT,
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BakiMate — Udhaar & installments, clear and fast",
-    description:
-      "Customer balances, credits, and instalments in one simple ledger.",
+    title: DEFAULT_SITE_TITLE,
+    description: DEFAULT_SITE_DESCRIPTION,
+    images: [defaultOgImage],
   },
   ...(googleVerification
     ? { verification: { google: googleVerification } }
