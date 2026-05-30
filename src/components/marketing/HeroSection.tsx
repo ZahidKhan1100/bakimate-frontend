@@ -1,9 +1,7 @@
 import Link from "next/link";
-import type { ReactNode } from "react";
-import { GlassPanel } from "@/components/ui/glass-panel";
-import { SiteLogo } from "@/components/site/SiteLogo";
+import { HeroAppPreview } from "@/components/marketing/HeroAppPreview";
 import { brand } from "@/lib/brand";
-import { ArrowDownLeft, ArrowUpRight, Wallet } from "lucide-react";
+import { Wallet } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -68,78 +66,10 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="relative hm-hero-zoom">
-          <div
-            className="absolute -right-8 -top-8 h-56 w-56 rounded-full blur-3xl"
-            style={{ backgroundColor: `${brand.accentTeal}33` }}
-          />
-          <GlassPanel className="relative p-6 md:p-8">
-            <div className="rounded-2xl bg-gradient-to-br from-slate-800 to-slate-900 p-4 shadow-2xl">
-              <div className="aspect-[9/16] max-h-[320px] rounded-xl bg-gradient-to-b from-slate-700 to-slate-900 p-4">
-                <div className="flex items-center justify-between text-xs text-white/60">
-                  <span>9:41</span>
-                  <span className="flex items-center gap-1.5 font-medium text-white/80">
-                    <SiteLogo decorative size={18} className="rounded-md" />
-                    BakiMate
-                  </span>
-                </div>
-                <div className="mt-5 space-y-3">
-                  <MockLedgerRow
-                    icon={<ArrowUpRight className="h-4 w-4 text-emerald-400" />}
-                    label="Gave (credit)"
-                    amount="RM 240.00"
-                    sub="Ahmad — instalment 2/6"
-                  />
-                  <MockLedgerRow
-                    icon={<ArrowDownLeft className="h-4 w-4 text-teal-300" />}
-                    label="Got (payment)"
-                    amount="RM 80.00"
-                    sub="DuitNow · today"
-                  />
-                  <div
-                    className="rounded-xl border border-white/10 p-3 backdrop-blur-md"
-                    style={{ background: "rgba(255,255,255,0.06)" }}
-                  >
-                    <p className="text-[10px] font-semibold uppercase tracking-wider text-teal-300">
-                      Receipt scan
-                    </p>
-                    <p className="mt-1 text-sm font-bold text-white">Supplier invoice</p>
-                    <p className="text-xs text-white/60">Gemini · amount prefilled</p>
-                    <p className="mt-2 text-lg font-black" style={{ color: brand.accentTeal }}>
-                      RM 42.10
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </GlassPanel>
+        <div className="hm-hero-zoom">
+          <HeroAppPreview />
         </div>
       </div>
     </section>
-  );
-}
-
-function MockLedgerRow({
-  icon,
-  label,
-  amount,
-  sub,
-}: {
-  icon: ReactNode;
-  label: string;
-  amount: string;
-  sub: string;
-}) {
-  return (
-    <div className="flex items-start justify-between gap-3 rounded-xl border border-white/10 bg-white/10 p-3 backdrop-blur-md">
-      <div className="flex min-w-0 items-start gap-2">
-        <div className="mt-0.5 shrink-0 rounded-lg bg-white/10 p-1.5">{icon}</div>
-        <div className="min-w-0">
-          <p className="text-[10px] font-semibold uppercase tracking-wider text-white/50">{label}</p>
-          <p className="truncate text-sm font-bold text-white">{sub}</p>
-        </div>
-      </div>
-      <p className="shrink-0 text-sm font-black text-white">{amount}</p>
-    </div>
   );
 }

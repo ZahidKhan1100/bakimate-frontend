@@ -17,7 +17,7 @@ export function StructuredData() {
         url: SITE_URL,
         logo: {
           "@type": "ImageObject",
-          url: `${SITE_URL}/icon.png`,
+          url: `${SITE_URL}/icon.jpg`,
         },
         description:
           "BakiMate is a simple ledger for shopkeepers: track credits (gave), payments (got), and instalments per customer on iOS, Android, and web.",

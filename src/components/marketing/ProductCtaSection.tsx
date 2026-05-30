@@ -1,6 +1,8 @@
+import Image from "next/image";
 import Link from "next/link";
 import { GlassPanel } from "@/components/ui/glass-panel";
 import { brand } from "@/lib/brand";
+import { Smartphone } from "lucide-react";
 
 /** Replaces the old HabiMate “verified badge / house agreement” lead magnet—BakiMate is B2B-lite / shop ledger. */
 export function ProductCtaSection() {
@@ -34,36 +36,67 @@ export function ProductCtaSection() {
               </li>
             </ul>
           </div>
-          <GlassPanel className="p-6 sm:p-8">
-            <p className="text-sm font-semibold text-slate-900 dark:text-white">
-              Ready to try?
-            </p>
-            <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-              Download for your platform, then sign in with email, Google, or Apple—same as the
-              production app.
-            </p>
-            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-              <a
-                href="#download"
-                className="inline-flex min-h-[48px] flex-1 items-center justify-center rounded-2xl px-6 py-3 text-center text-sm font-bold text-white transition"
-                style={{ backgroundColor: brand.primary }}
+          <GlassPanel className="overflow-hidden p-0">
+            <div
+              className="flex items-center gap-4 border-b border-slate-200/80 px-6 py-5 dark:border-white/10 sm:px-8"
+              style={{
+                background: `linear-gradient(135deg, ${brand.primary}12, transparent 60%)`,
+              }}
+            >
+              <div
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl"
+                style={{ backgroundColor: `${brand.primary}18` }}
               >
-                App Store / Play
-              </a>
-              <Link
-                href="/contact"
-                className="inline-flex min-h-[48px] flex-1 items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3 text-center text-sm font-bold text-slate-900 hover:bg-slate-50 dark:border-white/15 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
-              >
-                Contact
-              </Link>
+                <Smartphone className="h-6 w-6" style={{ color: brand.primary }} aria-hidden />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="font-heading text-lg font-bold text-slate-900 dark:text-white">
+                  Ready to try?
+                </p>
+                <p className="mt-0.5 text-sm text-slate-600 dark:text-slate-300">
+                  iOS &amp; Android — same sign-in as production.
+                </p>
+              </div>
+              <Image
+                src="/icon.jpg"
+                alt=""
+                width={56}
+                height={56}
+                aria-hidden
+                className="hidden h-14 w-14 shrink-0 rounded-2xl object-cover shadow-md sm:block"
+              />
             </div>
-            <p className="mt-4 text-xs text-slate-500 dark:text-slate-400">
-              Need something custom for your region or POS integration?{" "}
-              <Link href="/contact" className="font-semibold underline underline-offset-2" style={{ color: brand.primary }}>
-                Contact us
-              </Link>
-              .
-            </p>
+            <div className="px-6 py-6 sm:px-8 sm:py-8">
+              <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                Download for your platform, then sign in with email, Google, or Apple.
+              </p>
+              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href="#download"
+                  className="inline-flex min-h-[48px] flex-1 items-center justify-center rounded-2xl px-6 py-3 text-center text-sm font-bold text-white transition"
+                  style={{ backgroundColor: brand.primary }}
+                >
+                  App Store / Play
+                </a>
+                <Link
+                  href="/contact"
+                  className="inline-flex min-h-[48px] flex-1 items-center justify-center rounded-2xl border border-slate-300 bg-white px-6 py-3 text-center text-sm font-bold text-slate-900 hover:bg-slate-50 dark:border-white/15 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800"
+                >
+                  Contact
+                </Link>
+              </div>
+              <p className="mt-4 text-xs text-slate-500 dark:text-slate-400">
+                Need something custom for your region or POS integration?{" "}
+                <Link
+                  href="/contact"
+                  className="font-semibold underline underline-offset-2"
+                  style={{ color: brand.primary }}
+                >
+                  Contact us
+                </Link>
+                .
+              </p>
+            </div>
           </GlassPanel>
         </div>
       </div>
