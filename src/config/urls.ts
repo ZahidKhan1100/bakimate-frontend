@@ -30,5 +30,7 @@ export const APP_STORE_URL =
   process.env.NEXT_PUBLIC_APP_STORE_URL?.trim() ||
   "https://apps.apple.com/app/bakimate/id6768776202";
 
-/** Google Play listing when live; empty until `NEXT_PUBLIC_PLAY_STORE_URL` is set. */
-export const PLAY_STORE_URL = process.env.NEXT_PUBLIC_PLAY_STORE_URL?.trim() || "";
+/** Google Play listing (override via `NEXT_PUBLIC_PLAY_STORE_URL`). */
+export const PLAY_STORE_URL =
+  process.env.NEXT_PUBLIC_PLAY_STORE_URL?.trim() ||
+  "https://play.google.com/store/apps/details?id=com.ihabimate.bakimate";

@@ -1,8 +1,9 @@
-import { APP_STORE_URL, SITE_URL } from "@/config/urls";
+import { APP_STORE_URL, PLAY_STORE_URL, SITE_URL } from "@/config/urls";
 
 const ORG_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
-const APP_ID = `${SITE_URL}/#app`;
+const APP_ID_IOS = `${SITE_URL}/#app-ios`;
+const APP_ID_ANDROID = `${SITE_URL}/#app-android`;
 
 /**
  * Site-wide JSON-LD: Organization, WebSite, and MobileApplication (App Store).
@@ -24,7 +25,7 @@ export function StructuredData() {
         },
         description:
           "BakiMate is a shop ledger for customer udhaar, instalments, payments, and supplier payables.",
-        sameAs: [APP_STORE_URL],
+        sameAs: [APP_STORE_URL, PLAY_STORE_URL].filter(Boolean),
         contactPoint: {
           "@type": "ContactPoint",
           contactType: "customer support",
@@ -44,7 +45,7 @@ export function StructuredData() {
       },
       {
         "@type": "MobileApplication",
-        "@id": APP_ID,
+        "@id": APP_ID_IOS,
         name: "BakiMate",
         applicationCategory: "FinanceApplication",
         operatingSystem: "iOS",
@@ -60,6 +61,27 @@ export function StructuredData() {
         url: APP_STORE_URL,
         description:
           "Run your shop customer credit smarter: balances, reminders, instalments, supplier payables, and PDF summaries.",
+        publisher: { "@id": ORG_ID },
+        screenshot: `${SITE_URL}/opengraph-image`,
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": APP_ID_ANDROID,
+        name: "BakiMate",
+        applicationCategory: "FinanceApplication",
+        operatingSystem: "Android",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          url: PLAY_STORE_URL,
+        },
+        downloadUrl: PLAY_STORE_URL,
+        installUrl: PLAY_STORE_URL,
+        url: PLAY_STORE_URL,
+        description:
+          "Track customer udhaar, instalments, payments, and supplier balances on Android — fast, offline-friendly, built for shopkeepers.",
         publisher: { "@id": ORG_ID },
         screenshot: `${SITE_URL}/opengraph-image`,
       },
